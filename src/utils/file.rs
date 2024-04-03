@@ -1,7 +1,7 @@
 use std::fs;
 use std::path::Path;
-
 use crate::logger::{*, results::Result};
+#[allow(dead_code)]
 pub fn move_file(base: impl AsRef<Path>, out: impl AsRef<Path>) -> results::Result {
     let base = base.as_ref();
     let out = out.as_ref();
@@ -25,6 +25,7 @@ pub fn move_file(base: impl AsRef<Path>, out: impl AsRef<Path>) -> results::Resu
         }
     }
 }
+#[allow(dead_code)]
 pub fn file_is_in_dir(file: impl AsRef<Path>, dir: impl AsRef<Path>) -> bool {
     let file_name = file.as_ref().file_name().unwrap().to_str().unwrap();
     let mut dir = dir.as_ref().to_path_buf(); 

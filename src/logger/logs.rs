@@ -1,4 +1,6 @@
 use crate::logger::colors::{Colors, LogLevel};
+
+#[allow(dead_code)]
 fn print_color(message: String, color1: &str, color2 : Option<&str>) {
     if color2.is_some() {
         println!("{}{}{}{}", color1,color2.unwrap(), message, Colors::RESET);
@@ -8,6 +10,7 @@ fn print_color(message: String, color1: &str, color2 : Option<&str>) {
         println!("{}{}{}", color1, message, Colors::RESET);
     }
 }
+#[allow(dead_code)]
 fn ljust(content: &str, length: usize) -> String {
     let mut padded_content = String::from(content);
     for _ in 0..(length - content.len()) {
@@ -15,6 +18,7 @@ fn ljust(content: &str, length: usize) -> String {
     }
     format!("[{}]", padded_content)
 }
+#[allow(dead_code)]
 fn log_message_builder(prefix : String, message : &str) -> String{
     format!("{} : {}", prefix, message)
 }
