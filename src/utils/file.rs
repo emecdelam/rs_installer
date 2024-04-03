@@ -5,8 +5,6 @@ use crate::logger::{*, results::Result};
 pub fn move_file(base: impl AsRef<Path>, out: impl AsRef<Path>) -> results::Result {
     let base = base.as_ref();
     let out = out.as_ref();
-
-    // Rest of the code remains the same
     logs::log(&format!("Trying to move {:?} to {:?}", base, out), colors::LogLevel::Attempt);
     if out.is_dir() {
         let file_name = base.file_name().unwrap().to_str().unwrap();
