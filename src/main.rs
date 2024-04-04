@@ -5,7 +5,8 @@ use utils::file::*;
 mod logger;
 #[allow(unused_imports)]
 use logger::{results::is_success, *};
-
+mod parser;
+use parser::parse;
 fn main() {
-    // Add valid Rust code here
+    parse::parse_file("example.rsins");
 }

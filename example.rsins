@@ -1,0 +1,5 @@
+0"tests/move_file_test/init/test.txt" "tests/move_file_test/end/test.txt"
+0"tests/move_file_test/init/moved/" "tests/move_file_test/end/moved/"
+0"tests/move_file_test/end/test.txt" "tests/move_file_test/init/test.txt"
+0"tests/move_file_test/end/moved/" "tests/move_file_test/init/moved/"
+1"example_input.txt" "tests/move_file_test/init/test.txt"

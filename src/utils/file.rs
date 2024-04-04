@@ -6,7 +6,7 @@ pub fn move_file(base: impl AsRef<Path>, out: impl AsRef<Path>) -> results::Resu
     let base = base.as_ref();
     let out = out.as_ref();
     logs::log(&format!("Trying to move {:?} to {:?}", base, out), colors::LogLevel::Attempt);
-    if out.is_dir() {
+    if out.is_dir() && base.is_file() {
         let file_name = base.file_name().unwrap().to_str().unwrap();
         let mut out = out.to_path_buf(); 
         out.push(file_name);
@@ -29,4 +29,10 @@ pub fn file_is_in_dir(file: impl AsRef<Path>, dir: impl AsRef<Path>) -> bool {
     let mut dir = dir.as_ref().to_path_buf(); 
     dir.push(file_name);
     dir.exists()
+}
+#[allow(dead_code)]
+pub fn dir_is_in_dir(dir: impl AsRef<Path>, parent_dir: impl AsRef<Path>) -> bool {
+    let dir = dir.as_ref();
+    let parent_dir = parent_dir.as_ref();
+    parent_dir.join(dir).exists()
 }
